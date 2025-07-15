@@ -1,14 +1,47 @@
 html,
 body {
-  --bs-light-rgb: 236, 236, 236;
+  --bs-dark: var(--nat-navbar-bg);
+  --bs-dark-rgb: var(--nat-navbar-bg-rgb);
   box-sizing: border-box;
   height: 100%;
   padding: 0;
   margin: 0;
+  background: url('/background_color.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+:root {
+   --nat-navbar-bg: #2E003E; 
+  --nat-navbar-bg-rgb: 46, 0, 62; 
+  --nat-navbar-text-color: white; 
+  --nat-navbar-highlight-text: khaki; 
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
+/* Dropdown text fix */
+.bg-dark a.dropdown-item,
+.bg-dark .dropdown-menu a {
+  color: var(--nat-navbar-text-color); 
+}
+
+.bg-dark .dropdown-menu a:hover {
+  background-color: var(--nat-navbar-highlight-text); 
+  color: var(--nat-navbar-bg); 
+}
+
+footer, footer a {
+  color: var(--nat-navbar-text-color);
 }
