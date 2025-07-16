@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
       <Container>
         <Navbar.Brand href="/">digits</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav"> 
           <Nav className="me-auto justify-content-start">
             {currentUser
               ? [
@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
                     Add Stuff
                   </Nav.Link>,
                   <Nav.Link id="list-stuff-nav" href="/list" key="list" active={pathName === '/list'}>
-                    List Stuff
+                    List Contacts
                   </Nav.Link>,
                 ]
               : ''}
