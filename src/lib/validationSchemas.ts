@@ -20,10 +20,12 @@ export const EditStuffSchema = Yup.object({
 
 
 export interface Contact {
- firstName: string;
+ id: number;
+  firstName: string;
  lastName: string;
  address: string;
  image: string;
  description: string;
+ owner: string;
 }
 
