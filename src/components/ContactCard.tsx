@@ -19,9 +19,9 @@ const ContactCard = ({ contact }: ContactCardProps) => {
          <Image
            src={contact.image}
            alt={`${contact.firstName} ${contact.lastName}`}
-           layout="fill"
-           objectFit="cover"
-           className="rounded-circle"
+           fill
+           style={{ objectFit: 'cover', borderRadius: '50%' }}
+           sizes="75px"
          />
        </div>
        <div>
