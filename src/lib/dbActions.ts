@@ -67,24 +67,36 @@ export async function deleteStuff(id: number) {
 * @param contact, an object with properties: firstName, lastName, address, image, description, owner.
 */
 export async function addContact(contact: {
- firstName: string;
- lastName: string;
- address: string;
- image: string;
- description: string;
- owner: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+  image: string;
+  description: string;
+  owner: string;
 }) {
- await prisma.contact.create({
-   data: {
-     firstName: contact.firstName,
-     lastName: contact.lastName,
-     address: contact.address,
-     image: contact.image,
-     description: contact.description,
-     owner: contact.owner,
-   },
- });
- redirect('/list');
+  await prisma.contact.upsert({
+    where: {
+      firstName_lastName: {
+        firstName: contact.firstName,
+        lastName: contact.lastName,
+      },
+    },
+    update: {
+      address: contact.address,
+      image: contact.image,
+      description: contact.description,
+      owner: contact.owner,
+    },
+    create: {
+      firstName: contact.firstName,
+      lastName: contact.lastName,
+      address: contact.address,
+      image: contact.image,
+      description: contact.description,
+      owner: contact.owner,
+    },
+  });
+  redirect('/list');
 }
 
 

@@ -1,10 +1,9 @@
 import { getServerSession } from 'next-auth';
 import authOptions from '@/lib/authOptions';
 import { loggedInProtectedPage } from '@/lib/page-protection';
-import AddStuffForm from '@/components/AddStuffForm';
+import AddContactForm from '@/components/AddContactForm';
 
-const AddStuff = async () => {
-  // Protect the page, only logged in users can access it.
+const AddContact = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
@@ -13,9 +12,10 @@ const AddStuff = async () => {
   );
   return (
     <main>
-      <AddStuffForm />
+      <AddContactForm />
     </main>
   );
 };
 
-export default AddStuff;
+export default AddContact;
+
